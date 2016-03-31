@@ -53,9 +53,9 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
     }
 
     public void onSensorChanged(SensorEvent event) {
-        float x = event.values[0];
-        float y = event.values[1];
-        float z = event.values[2];
+        float x = Math.round(event.values[0]);
+        float y = Math.round(event.values[1]);
+        float z = Math.round(event.values[2]);
 
         mXcoord.setText("X: " + x);
         mYcoord.setText("Y: " + y);
