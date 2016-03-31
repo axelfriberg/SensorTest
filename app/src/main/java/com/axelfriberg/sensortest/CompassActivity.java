@@ -41,8 +41,8 @@ public class CompassActivity extends Activity implements SensorEventListener {
             if (azimut != null)
                 canvas.rotate(-azimut*360/(2*3.14159f), centerx, centery);
             paint.setColor(0xff0000ff);
-            canvas.drawLine(centerx, -1000, centerx, +1000, paint);
-            canvas.drawLine(-1000, centery, 1000, centery, paint);
+            canvas.drawLine(centerx, centery - 500, centerx, centery + 500, paint);
+            canvas.drawLine(centerx-250, centery, centerx+250, centery, paint);
             canvas.drawText("N", centerx+5, centery-10, paint);
             canvas.drawText("S", centerx-10, centery+15, paint);
             paint.setColor(0xff00ff00);
