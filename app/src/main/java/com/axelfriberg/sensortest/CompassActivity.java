@@ -10,8 +10,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 public class CompassActivity extends Activity implements SensorEventListener {
     private Float azimut;  // View to draw a compass
@@ -44,7 +42,7 @@ public class CompassActivity extends Activity implements SensorEventListener {
                 canvas.rotate(-azimut*360/(2*3.14159f), centerx, centery);
             paint.setColor(0xff0000ff);
             canvas.drawLine(centerx, -1000, centerx, +1000, paint);
-            canvas.drawLine(-1000, centery, +1000, centery, paint);
+            canvas.drawLine(-1000, centery, 1000, centery, paint);
             canvas.drawText("N", centerx+5, centery-10, paint);
             canvas.drawText("S", centerx-10, centery+15, paint);
             paint.setColor(0xff00ff00);
